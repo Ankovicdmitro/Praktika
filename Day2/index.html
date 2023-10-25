@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="day2">
+        <h2>
+            Пошук:
+        </h2>
+        <div>
+            <input type="text" v-model="search_word" @change="searchWord()" class="input">
+
+        </div>
+    <table>
+        <tr>
+            <th class="col_1">Прізвище та ім'я</th>
+            <th class="col_2">Група</th>
+            <th class="col_2">Р.Н.</th>
+            <th class="col_2">Залік</th>
+            <th></th>
+        </tr>
+        <tr v-for="item in array_student">
+            <td v-bind:class="searchWord(item.name)?'ch_color':''">{{item.name}}</td>
+            <td>{{item.group}}</td>
+            <td>{{item.birth_year}}</td>
+            <td><input type="checkbox" v-model="item.isDone"></td>
+            <td class="col_3" @click="delete_by_Id(item.id)">Видалити</td>
+        </tr>
+    </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

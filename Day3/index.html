@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="day3">
+    <span style="font-size: 25px;">Enter Age: </span>
+    <input type="number" v-model.number="age">
+    <span style="font-size: 25px;">Enter Message</span>
+    <input v-model.lazy="msg">
+    <span style="font-size: 25px;">Enter Message</span>
+    <input v-model.trim="message">
+    <div>
+      <p>Age(number):  {{age}}</p>
+      <p>Message(lazy): {{msg}}</p>
+      <p>Message(trim): {{message}}</p>
+    </div>
+  </div>
+
+  <div id="databinding">
+    <div v-bind:style="styleobj" v-on:mouseover="changebgcolor" v-on:mouseout="originalcolor"></div>
+  </div>
+  
+  <div id="day3_1">
+    <h2>
+      Пошук:
+    </h2>
+    <div>
+      <input type="text" v-model="search_word" @change="searchWord()" class="input">
+
+    </div>
+    <table>
+      <tr>
+        <th class="col_1">Прізвище та ім'я</th>
+        <th class="col_2">Група</th>
+        <th class="col_2">Р.Н.</th>
+        <th class="col_2">Залік</th>
+        <th></th>
+      </tr>
+      <tr v-for="item in array_student">
+        <td v-bind:class="searchWord(item.name)?'ch_color':''">{{item.name}}</td>
+        <td>{{item.group}}</td>
+        <td>{{item.birth_year}}</td>
+        <td><input type="checkbox" v-model="item.isDone"></td>
+        <td class="col_3" @click="delete_by_Id(item.id)">Видалити</td>
+      </tr>
+      <tr>
+        <td><input type="text" class="input_name" v-model="new_user"></td>
+        <td><input type="text" v-model="new_group"></td>
+        <td><input type="text" v-model="new_year"></td>
+        <td><input type="checkbox" v-model="new_isDone"></td>
+        <td class="col_3" @click="add_user()">Додати</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+#databinding{
+    margin-top: 50px;
+}
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.col_1{
+    width: 200px;
+
+}
+.col_2, .col_3{
+    width: 100px;
+}
+.col_3{
+    cursor: pointer;
+
+}
+.col_3:hover{
+    background: grey;
+}
+.ch_color{
+    background: #589be3;
+}
+.input {
+    margin: 20px;
+    border: 2px solid grey;
+    height: 30px;
+    font-size: 25px;
+}
+.input_name{
+    width: 200px;
+}

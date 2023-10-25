@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 1</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="center" id="day1">
+
+        <input type="radio" name="author" v-model="isAuthor" value="exist">Є автор
+        <input type="radio" name="author" v-model="isAuthor" value="">Немає автора
+
+        <br>
+
+        <div v-for="item in filteredQuotes">
+            <h3 v-bind:class="item.quote.length >40 ? 'red' : 'black'">{{item.quote}}</h3>
+            <h5>{{item.source}}</h5>
+        </div>
+
+        <button @click="sortBySource()">Сортувати</button>
+        <div v-for="item in sortedQuotes">
+            <h3>{{item.quote}}</h3>
+            <h5>{{item.source}}</h5>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
