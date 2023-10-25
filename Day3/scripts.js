@@ -66,7 +66,7 @@ new Vue({
     data:{
         search_word:'',
         array_student:students,
-        max_id: 4,
+        max_id: 5,
         new_user:'',
         new_group:'',
         new_isDone: false,
