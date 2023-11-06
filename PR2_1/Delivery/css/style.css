@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-input {
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    height: 40px;
+    width: 690px;
+    font-size: 16px;
+    line-height: 24px;
+    background: #fff url("../img/home.svg") no-repeat left 11px center;
+    padding-left: 35px;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+}
+.button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.0015);
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+}
+.button-primary {
+    background: #1890ff;
+    border: 1px solid #1890ff;
+    color: #fff;
+    margin-right: 10px;
+}
+.button-icon {
+    margin-right: 6px;
+}
